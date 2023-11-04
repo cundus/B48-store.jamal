@@ -1,0 +1,1 @@
+Taruh assetmu di sini

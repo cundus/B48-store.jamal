@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "./store/user/action";
 import {
@@ -9,7 +9,8 @@ import {
    CardActionArea,
    CardContent,
 } from "@mui/material";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
+// import { Rating } from "react-simple-star-rating";
 
 const App = () => {
    const [open, setOpen] = useState(false);
@@ -36,7 +37,7 @@ const App = () => {
             flexWrap={"wrap"}
             gap={2}
          >
-            {stateUser.data.map((item) => (
+            {stateUser.data?.map((item) => (
                <Card sx={{ minWidth: 250, flex: "1 1" }} key={item.id}>
                   <CardActionArea>
                      <CardContent>
@@ -53,7 +54,6 @@ const App = () => {
                </Card>
             ))}
          </Box>
-         <Modal handleClose={() => setOpen((prev) => !prev)} open={open} />
       </Container>
    );
 };
